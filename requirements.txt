@@ -1,0 +1,11 @@
+streamlit
+opencv-python-headless
+h5py
+matplotlib
+numpy
+scipy
+tqdm
+scikit-learn
+pillow
+ipykernel
+tensorflow

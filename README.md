@@ -12,14 +12,14 @@
 
 ## Project Movivation
 
-In this project, I uses Convolutional Neural Networks (CNNs) to build a pipeline to solve image classification task. CNNs are one of the most popular methor to analyse image data. This project build CNN from scratch and use transfer learning, which is a technique that allows us use pretrain model, bring many advantages such as saving training time, better performance of neural networks. The objective of this project is given an image, model will classify if it a dog or a human, and estimate of the canine’s breed. If the model can't identify the image as a human or dog, it will let user know.
+In this project, I uses Convolutional Neural Networks (CNNs) to build a pipeline to solve real-world image classification task. CNNs are one of the most popular methor to analyse image data. This project build CNN from scratch and use transfer learning, which is a technique that allows us use pretrain model, bring many advantages such as saving training time, better performance of neural networks. The objective of this project is given an image, model will classify if it a dog or a human, and estimate of the canine’s breed. If the model can't identify the image as a human or dog, it will let user know. This project also provide a web app for demo.
 
 ### Instructions
 
 1. Clone this repository.
 
     ```
-    git clone https://github.com/thekael99/project_4
+    git clone https://github.com/DoLamTruong/dog_breed
     ```
 
 2. Install the python packages using requirements.txt using:
@@ -37,8 +37,6 @@ In this project, I uses Convolutional Neural Networks (CNNs) to build a pipeline
     ```
 
 5. The app will be running on [local_app](http://localhost:8501)
-
-Or you can use [online_app](https://thekael99-project-4-app-6vnx5s.streamlitapp.com) to demo project instead of run on local machine.
 
 # File Description
 
