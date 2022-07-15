@@ -28,67 +28,64 @@ In this project, I uses Convolutional Neural Networks (CNNs) to build a pipeline
     pip install -r requirements.txt
     ```
 
-3. cd root project folder directory.
-
-4. To run web app use the following command:
+3. To run web app use the following command:
 
     ```
     streamlit run app.py
     ```
 
-5. The app will be running on [local_app](http://localhost:8501)
-
 # File Description
 
-requirements.txt: Python packages.
+* Haarcascades: Xml file for use with the OpenCv face detector class.
 
-dog_app.ipynb: notebook preprocess, analyze, train and inference.
+* Saved_models: where best model saved after train.
 
-dog_app.ipynb: jupyter notebook of dog breed classifier.
 
-dog_app.py: dog_app.ipynb convert to script python.
+* images: folder of image files for the markdown file and inference.
 
-app.py: web app implement using streamlit.
+* dog_app.ipynb: notebook preprocess, analyze, train and inference.
 
-images: folder of image files for the markdown file and inference.
+* model_dog.py: model to inference in web app demo.
 
+* app.py: web app.
+
+* extract_bottleneck_features: extract bottleneck features from pretrain model.
+
+* requirements.txt: Python packages.
 
 ## Problem Statement
 
-For our web app, we've to write an algorithm that accepts a file path to an image and first determines whether the image contains a human, dog, or neither. Then,
+Web app use an algorithm take an image as input and then determines whether the image contains a human, dog, or neither. After that:
 
-1. If a dog is detected in the image, return the predicted breed.
+* If a dog is detected, continue predicte its breed.  
 
-2. If a human is detected in the image, return the resembling dog breed.
+* If a human is detected, continue predicte its breed.  
 
-3. If neither is detected in the image, provide an output that indicates an error.
+* If neither is detected, return none.  
 
-### Strategy for solving the problem
+### The following steps is used to solve the problem
 
-1. Build Humans and Dog detectors from the image.
-2. Create a CNN to Classify Dog Breeds (from Scratch)
-3. Use a CNN to Classify Dog Breeds (using Transfer Learning)
-4. Create a CNN to Classify Dog Breeds (using Transfer Learning)
-5. Choose the best CNN model for classification.
-6. Write your Algorithm to detect dog breed or resembling dog breed or return an error.
-7. Test the Algorithm.
-8. Export the best model.
-9. Build a streamlit web app using the model.
-10. Test the model.
+* [Step 0](#step0): Import Datasets
+* [Step 1](#step1): Detect Humans
+* [Step 2](#step2): Detect Dogs
+* [Step 3](#step3): Create a CNN to Classify Dog Breeds (from Scratch)
+* [Step 4](#step4): Use a CNN to Classify Dog Breeds (using Transfer Learning)
+* [Step 5](#step5): Create a CNN to Classify Dog Breeds (using Transfer Learning)
+* [Step 6](#step6): Write your Algorithm
+* [Step 7](#step7): Test Your Algorithm
 
 ### Solution
 
 The expected solution will be a web application that can do the following things
 
 1. Users can upload an image from the computer.
-2. If a dog is detected in the image, it'll show the predicted breed.
-3. If a human is detected in the image, it'll show the resembling dog breed.
-4. If neither is detected in the image, it'll show an error.
-5. If the prediction fails, it will show a message to user.
+2. If a dog is detected, it'll show the predicted breed and notify it a dog.
+3. If a human is detected, it'll show the predicted breed and notify it a human.
+4. If neither is detected in the image, it'll also notify.
 
 ### Metrics
 
-I choose Accuracy as a measure of model performance. Based on the highest test accuracy model, I build the web app and algorithm.
+Accuracy is used to as a metric to measure of model performance and to choose the best model.
 
 # Analysis
 
@@ -109,38 +106,36 @@ There are 13233 total human images.
 
 Use OpenCV's implementation of Haar feature-based cascade classifiers to detect human faces in images.
 
-100% percent of the first 100 images in human_files have a detected human face. 11% percent of the first 100 images in dog_files have a detected human face
+100% percent of the first 100 images in human dataset have a detected human face. 11% percent of the first 100 images in dog dataset have a detected human face
 
 ## Dog Detector Performance
 
-I've used a pre-trained ResNet-50 model to detect dogs in images.
+I've used a pre-trained InceptionV3 model to detect dogs in images.
 
 0.0 percentage of the images in human_files_short have a detected dog. 100.0 percentage of the images in dog_files_short have a detected dog
 
 ## Model Performance
 
-CNN from scratch has a test performance of 5%.
+CNN built from scratch achieved a test performance of 1.11%.
 
-THE pre-trained VGG-16 CNN model has a test accuracy of 40%.
+THE pre-trained VGG-16 CNN model achieved a test accuracy of 45%.
 
-CNN to Classify Dog Breeds using Resnet50(using transfer Learning) has a test accuracy of 80%.
+CNN to Classify Dog Breeds using InceptionV3 (pretrained ImageNet) achieved a test accuracy of 79.7%.
 
-Among the 3 models, CNN to Classify Dog Breeds using Resnet50 has the best performance. We'll use it to build our Algorithm for the web app.
+
+Among the 3 models, InceptionV3 achieved best performance. It will be use to deploy in the web app.
 
 # Conclusion
 
-## Reflection
+### Reflection  
 
-### Summary
-
-1. This web app uses dog_detector() for dog detection and face_detector() for face detection.
-2. For dog breed detection CNN model with a pre-trained Resnet50 model is used.
-3. In the treamlit web app, use predict_human_dog() function to predict dog breed or resembling dog breed.
+1. This web app first uses an algorithm to detect human, dog or neighther. 
+2. For dog breed classification, pre-trained InceptionV3 model is used.
+3. In the web app, Streamlit is use as a main library, make it easier to deploy machine learning model.
 4. User uploads an image file on the app home page.
-5. After uploading the user clicks on the Detect Npw button.
-6. When a dog breed is detected it shows the dog breed information.
-7. When a human face is detected it shows the human face resembling dog breed.
-8. For anything else it shows message.
+5. When a dog breed is detected it shows the dog breed information.
+6. When a human face is detected it shows the human face resembling dog breed.
+7. For anything else it shows message.
 
 #### Web App Pages result
 
