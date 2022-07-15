@@ -144,17 +144,17 @@ Among the 3 models, CNN to Classify Dog Breeds using Resnet50 has the best perfo
 
 #### Web App Pages result
 
-Home page
+Home page  
 ![Home](images/mock_app.png)
 
-Predict a dog picture
+Predict a dog picture  
 ![Predict Dog Breed](images/predict_dog.png)
 
-Predict a human picture
+Predict a human picture  
 ![Human Resambling dog breed](images/predict_human.png)
 
-Predict not a human nor dog picture
-![Non Resambling](images/predict_non.png)
+Predict not a human nor dog picture  
+![Non Resambling](images/predict_none.png)
 
 ## Improvement
 
