@@ -34,7 +34,7 @@ In this project, I uses Convolutional Neural Networks (CNNs) to build a pipeline
     streamlit run app.py
     ```
 
-4. Link web app demo is here[here](https://dolamtruong-dog-breed-app-ew8pjm.streamlitapp.com/)
+4. Link web app demo is [here](https://dolamtruong-dog-breed-app-ew8pjm.streamlitapp.com/)
 
 # File Description
 
