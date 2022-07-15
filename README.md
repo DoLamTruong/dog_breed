@@ -153,9 +153,11 @@ Predict a dog picture
 Predict a human picture
 ![Human Resambling dog breed](images/predict_human.png)
 
+Predict not a human nor dog picture
+![Non Resambling](images/predict_non.png)
+
 ## Improvement
 
 1. Augmentation data
-2. Using better object detection model (Yolo)
-3. Tuning model with more layer instead of 1 Dense layer
-4. Decorate app UI
+2. Using better classification model (pretrain ConvNext, EfficientNet)
+3. Using better object dectection model (Yolov5)
